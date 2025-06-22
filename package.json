@@ -1,0 +1,17 @@
+{
+  "name": "group-manager-backend",
+  "version": "1.0.0",
+  "description": "Backend for the group manager app",
+  "main": "backend/index.js",
+  "scripts": {
+    "start": "node backend/index.js",
+    "dev": "nodemon backend/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+} 
