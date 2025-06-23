@@ -254,7 +254,8 @@
                         document.getElementById('code-text').textContent = state.groupCode;
                         renderMessageHistory(response.messages);
                     } else {
-                        showToast('Не удалось создать группу.', 'error');
+                        showToast(response.message || 'Не удалось создать группу.', 'error');
+                        show('main-menu');
                     }
                 });
             }
@@ -278,14 +279,14 @@
                     state.members = response.members;
                     state.message = response.message;
                     localStorage.setItem('lastGroup', state.groupCode);
-                    
                     document.getElementById('code-text').textContent = state.groupCode;
                     renderMessageHistory(response.messages);
                     updateMembersList();
                     show('group-page');
                 } else {
-                    if (showErrors) showToast(response.message, 'error');
+                    if (showErrors) showToast(response.message || 'Ошибка входа в группу', 'error');
                     localStorage.removeItem('lastGroup');
+                    show('main-menu');
                 }
             }
             
